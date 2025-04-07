@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">Sprintfield</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email\n</string>
+    <string name="all_in_one_project_management_application" translatable="false">Sprintfield is an all-in-one project management application. It\'s easy to use for planning any agile project, allowing easy task management, and issue creation.</string>
+    <string name="reg_text">Register today for free, or register using your enterprise credentials to access your workplace management system</string>
+    <string name="register">Register</string>
+    <string name="password_again">Password again</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="existing_account">Already have an account?</string>
+</resources>

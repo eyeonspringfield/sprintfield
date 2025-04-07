@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">Bejelentkezés</string>
+    <string name="username">Felhasználónév</string>
+    <string name="password">Jelszó</string>
+    <string name="email">Email\n</string>
+    <string name="register">Regisztrálás</string>
+    <string name="password_again">Jelszó újra</string>
+</resources>
