@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mcsor.sprintfield.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.mcsor.sprintfield.TasksFragment"
+        android:label="Tasks"
+        tools:layout="@layout/fragment_tasks"/>
+
+    <fragment
+        android:id="@+id/sprintsFragment"
+        android:name="com.mcsor.sprintfield.SprintsFragment"
+        android:label="Sprints"
+        tools:layout="@layout/fragment_sprints"/>
+
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="com.mcsor.sprintfield.ProjectsFragment"
+        android:label="Projects"
+        tools:layout="@layout/fragment_projects"/>
+
+    <fragment
+        android:id="@+id/teamsFragment"
+        android:name="com.mcsor.sprintfield.TeamsFragment"
+        android:label="Teams"
+        tools:layout="@layout/fragment_teams"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mcsor.sprintfield.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings"/>
+
+</navigation>

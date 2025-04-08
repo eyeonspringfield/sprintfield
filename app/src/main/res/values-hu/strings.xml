@@ -6,4 +6,12 @@
     <string name="email">Email\n</string>
     <string name="register">Regisztrálás</string>
     <string name="password_again">Jelszó újra</string>
+    <string name="no_account">Nincs fiókja?</string>
+    <string name="existing_account">Van már fiókja?</string>
+    <string name="home">Főoldal</string>
+    <string name="tasks">Feladatok</string>
+    <string name="sprints">Sprintek</string>
+    <string name="projects">Projektek</string>
+    <string name="teams">Csapatok</string>
+    <string name="settings">Beállítások</string>
 </resources>

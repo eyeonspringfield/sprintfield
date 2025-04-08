@@ -1,4 +1,11 @@
 <resources>
+    <color name="chip_color_positive">#b1d18a</color>
+    <color name="on_chip_color_positive">#1f3701</color>
+    <color name="chip_color_neutral">#dbc66e</color>
+    <color name="on_chip_color_neutral">#3a3000</color>
+    <color name="chip_color_negative">#ffb4ab</color>
+    <color name="on_chip_color_negative">#690005</color>
+
     <color name="md_theme_primary">#735187</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_primaryContainer">#F4DAFF</color>

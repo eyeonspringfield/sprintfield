@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:contentPadding="16dp"
+    android:id="@+id/taskCard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:spacing="8dp">
+
+        <!-- Title -->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Center the div on index.html for future reference"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/md_theme_onPrimaryContainer"
+            android:paddingBottom="8dp" />
+
+        <!-- Chips -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipOpen"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open"
+                app:chipBackgroundColor="@color/chip_color_positive"
+                android:textColor="@color/on_chip_color_positive" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipUrgent"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Urgent"
+                app:chipBackgroundColor="@color/chip_color_negative"
+                android:textColor="@color/on_chip_color_negative" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipProject"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SampleProject" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We need the div centered very fast or else very bad things will happen."
+            android:textSize="14sp"
+            android:textColor="@color/md_theme_onPrimaryContainer"
+            android:paddingBottom="8dp" />
+
+        <!-- Time / Duration -->
+        <TextView
+            android:id="@+id/timeEstimate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18 hrs"
+            android:textSize="14sp"
+            android:drawablePadding="8dp"
+            android:paddingBottom="12dp"
+            app:drawableStartCompat="@drawable/baseline_access_time_filled_24" />
+        <Button
+            android:id="@+id/openButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

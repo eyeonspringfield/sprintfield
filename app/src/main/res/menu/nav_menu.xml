@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="@string/home"
+        android:icon="@drawable/baseline_desk_24" />
+
+    <item
+        android:id="@+id/tasksFragment"
+        android:title="@string/tasks"
+        android:icon="@drawable/baseline_assignment_turned_in_24" />
+
+    <item
+        android:id="@+id/sprintsFragment"
+        android:title="@string/sprints"
+        android:icon="@drawable/baseline_auto_graph_24" />
+
+    <item
+        android:id="@+id/projectsFragment"
+        android:title="@string/projects"
+        android:icon="@drawable/baseline_engineering_24" />
+
+    <item
+        android:id="@+id/teamsFragment"
+        android:title="@string/teams"
+        android:icon="@drawable/baseline_people_alt_24" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:title="@string/settings"
+        android:icon="@android:drawable/ic_menu_preferences" />
+</menu>
