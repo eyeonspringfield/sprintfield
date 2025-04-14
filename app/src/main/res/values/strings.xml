@@ -4,8 +4,8 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="email" translatable="false">Email\n</string>
-    <string name="all_in_one_project_management_application" translatable="false">Sprintfield is an all-in-one project management application. It\'s easy to use for planning any agile project, allowing easy task management, and issue creation.</string>
-    <string name="reg_text" translatable="false">Register today for free, or register using your enterprise credentials to access your workplace management system</string>
+    <string name="all_in_one_project_management_application">Sprintfield is an all-in-one project management application. It\'s easy to use for planning any agile project, allowing easy task management, and issue creation.</string>
+    <string name="reg_text">Register today for free, or register using your enterprise credentials to access your workplace management system</string>
     <string name="register">Register</string>
     <string name="password_again">Password again</string>
     <string name="no_account">Don\'t have an account?</string>
@@ -24,5 +24,16 @@
     <string name="settings">Settings</string>
     <string name="open">Open</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="logout">Logout</string>
+    <string name="quick_menu">Quick Menu</string>
+    <string name="not_logged_in">Not logged in</string>
+    <string name="logged_in_as">Logged in as: %1$s</string>
+    <string name="signed_in">Login successful</string>
+    <string name="login_failed">Login failed: %1$s</string>
+    <string name="fill_out">Please fill out all fields</string>
+    <string name="pass_no_match">Passwords do not match!</string>
+    <string name="small_password">Password must be at least 6 characters long</string>
+    <string name="reg_success">Registered successfully!</string>
+    <string name="reg_failed">Signup failed: %1$s</string>
 </resources>

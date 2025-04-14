@@ -28,5 +28,9 @@
     <item
         android:id="@+id/settingsFragment"
         android:title="@string/settings"
-        android:icon="@android:drawable/ic_menu_preferences" />
+        android:icon="@drawable/baseline_brightness_high_24" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/logout"
+        android:icon="@drawable/baseline_exit_to_app_24"/>
 </menu>
