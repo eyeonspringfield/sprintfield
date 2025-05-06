@@ -2,6 +2,7 @@ package com.mcsor.sprintfield
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -42,8 +43,9 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
                         } else {
-                            Toast.makeText(this, getString(R.string.login_failed, task.exception?.localizedMessage),
+                            Toast.makeText(this, getString(R.string.login_failed),
                                 Toast.LENGTH_SHORT).show()
+                            Log.e("Sprintfield", "Unsuccessful login: " + task.exception)
                         }
                     }
             } else {

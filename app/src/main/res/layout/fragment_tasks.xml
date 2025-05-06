@@ -10,6 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:orientation="vertical" />
+        android:orientation="vertical" >
 
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large" />
+    </LinearLayout>
 </ScrollView>

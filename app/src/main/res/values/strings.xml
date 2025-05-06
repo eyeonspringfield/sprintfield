@@ -30,7 +30,7 @@
     <string name="not_logged_in">Not logged in</string>
     <string name="logged_in_as">Logged in as: %1$s</string>
     <string name="signed_in">Login successful</string>
-    <string name="login_failed">Login failed: %1$s</string>
+    <string name="login_failed">Wrong email or password</string>
     <string name="fill_out">Please fill out all fields</string>
     <string name="pass_no_match">Passwords do not match!</string>
     <string name="small_password">Password must be at least 6 characters long</string>

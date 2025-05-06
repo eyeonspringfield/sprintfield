@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:contentPadding="8dp"
+    android:id="@+id/sprintCard">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sprintStatus"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Current"
+            app:chipBackgroundColor="@color/chip_color_positive"
+            android:textColor="@color/on_chip_color_positive" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/sprintTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sprint 3: UI Refactor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_theme_onSurface" />
+
+            <TextView
+                android:id="@+id/sprintDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apr 28 - May 12"
+                android:textSize="14sp"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:layout_marginTop="4dp" />
+
+            <ProgressBar
+                android:id="@+id/sprintProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="12dp"
+                android:progress="45"
+                android:max="100"
+                android:progressDrawable="@drawable/progress_bar_primary" />
+
+            <TextView
+                android:id="@+id/sprintProgressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45% complete"
+                android:textSize="12sp"
+                android:textColor="@color/md_theme_onSurfaceVariant"
+                android:layout_marginTop="6dp" />
+
+            <Button
+                android:id="@+id/openButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/open" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

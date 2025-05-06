@@ -14,8 +14,6 @@
         android:orientation="vertical"
         android:spacing="8dp">
 
-        <!-- Title -->
-
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
@@ -26,7 +24,6 @@
             android:textColor="@color/md_theme_onPrimaryContainer"
             android:paddingBottom="8dp" />
 
-        <!-- Chips -->
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroup"
             android:layout_width="wrap_content"
@@ -60,7 +57,6 @@
                 android:text="SampleProject" />
         </com.google.android.material.chip.ChipGroup>
 
-        <!-- Description -->
         <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
@@ -70,7 +66,15 @@
             android:textColor="@color/md_theme_onPrimaryContainer"
             android:paddingBottom="8dp" />
 
-        <!-- Time / Duration -->
+        <TextView
+            android:id="@+id/asignee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:textColor="@color/md_theme_onPrimaryContainer"
+            android:paddingBottom="8dp" />
+
         <TextView
             android:id="@+id/timeEstimate"
             android:layout_width="wrap_content"

@@ -15,7 +15,11 @@
         android:id="@+id/tasksFragment"
         android:name="com.mcsor.sprintfield.TasksFragment"
         android:label="@string/tasks"
-        tools:layout="@layout/fragment_tasks"/>
+        tools:layout="@layout/fragment_tasks">
+        <action
+            android:id="@+id/action_tasksFragment_to_taskDetailsFragment"
+            app:destination="@id/taskDetailsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/sprintsFragment"
@@ -40,5 +44,21 @@
         android:name="com.mcsor.sprintfield.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings"/>
+
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.mcsor.sprintfield.TaskDetailsFragment"
+        android:label="Task Details"
+        tools:layout="@layout/fragment_task_details">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="timeEstimate"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

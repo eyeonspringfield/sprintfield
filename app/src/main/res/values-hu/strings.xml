@@ -21,7 +21,7 @@
     <string name="not_logged_in">Nincs bejelentkezve</string>
     <string name="logged_in_as">Bejelentkezve mint: %1$s</string>
     <string name="signed_in">Sikeres bejelentkezés</string>
-    <string name="login_failed">Sikertelen bejelentkezés: %1$s</string>
+    <string name="login_failed">Hibás email vagy jelszó</string>
     <string name="fill_out">Töltse ki az összes mezőt</string>
     <string name="pass_no_match">A jelszavak nem egyeznek!</string>
     <string name="small_password">A jelszó legalább 6 karakterből kell álljon</string>
