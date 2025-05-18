@@ -312,10 +312,8 @@ class SprintsFragment : Fragment() {
                     return@addOnSuccessListener
                 }
 
-                // Determine if new sprint is the current one
                 val newSprintIsCurrent = startDateMillis <= today && today <= endDateMillis
 
-                // If it should be current, reset all others to not current
                 val updates = mutableListOf<() -> Unit>()
                 if (newSprintIsCurrent) {
                     for (doc in existingSprints) {
@@ -330,10 +328,8 @@ class SprintsFragment : Fragment() {
                     }
                 }
 
-                // Apply updates
                 updates.forEach { it() }
 
-                // Create the new sprint
                 val sprintData = hashMapOf(
                     "title" to title,
                     "startDate" to Timestamp(Date(startDateMillis)),
@@ -357,7 +353,6 @@ class SprintsFragment : Fragment() {
             }
     }
 
-    // Overload displaySprints to accept data loaded from DB
     private fun displaySprints(sprints: List<Sprint>) {
         pastSprintsContainer.removeAllViews()
         val inflater = layoutInflater
@@ -377,7 +372,6 @@ class SprintsFragment : Fragment() {
         }
     }
 
-    // Your existing inflateSprintCard remains unchanged
     private fun inflateSprintCard(inflater: LayoutInflater, sprint: Sprint): View {
         val card = inflater.inflate(R.layout.sprint_card_view, pastSprintsContainer, false)
 

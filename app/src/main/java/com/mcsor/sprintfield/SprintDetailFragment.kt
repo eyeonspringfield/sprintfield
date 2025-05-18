@@ -93,7 +93,6 @@ class SprintDetailFragment : Fragment() {
             tasksContainer.addView(taskView)
         }
 
-        // Back button
         rootView.findViewById<Button>(R.id.backButton).setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
