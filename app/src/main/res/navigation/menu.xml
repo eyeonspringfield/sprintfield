@@ -61,4 +61,14 @@
             app:argType="string" />
     </fragment>
 
+    <fragment
+        android:id="@+id/sprintDetailFragment"
+        android:name="com.mcsor.sprintfield.SprintDetailFragment"
+        android:label="Sprint Detail">
+
+        <argument
+            android:name="sprint"
+            app:argType="com.mcsor.sprintfield.model.Sprint" />
+    </fragment>
+
 </navigation>

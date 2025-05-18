@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sprintDetailScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/sprintDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sprint Title"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_theme_onSurface"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/sprintDetailDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apr 28, 2025 - May 12, 2025"
+            android:textSize="16sp"
+            android:textColor="@color/md_theme_onSurfaceVariant"
+            android:paddingBottom="12dp"/>
+
+        <ProgressBar
+            android:id="@+id/sprintDetailProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:max="100"
+            android:progress="45"
+            android:progressDrawable="@drawable/progress_bar_primary"/>
+
+        <TextView
+            android:id="@+id/sprintDetailProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45% complete"
+            android:textSize="14sp"
+            android:textColor="@color/md_theme_onSurfaceVariant"
+            android:paddingBottom="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tasks"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_theme_onSurface"
+            android:paddingBottom="8dp"/>
+
+        <LinearLayout
+            android:id="@+id/tasksContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:layout_marginTop="24dp"/>
+
+    </LinearLayout>
+</ScrollView>

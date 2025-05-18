@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/dialog_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Sprint Title Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sprint_title"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/sprintTitleInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_sprint_title"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+
+        <!-- Start Date Input -->
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_date"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/startDateInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/select_start_date"
+            android:textColor="?android:textColorSecondary"
+            android:drawableEnd="@android:drawable/ic_menu_today"
+            android:drawablePadding="8dp" />
+
+        <!-- End Date Input -->
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/end_date"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/endDateInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/select_end_date"
+            android:textColor="?android:textColorSecondary"
+            android:drawableEnd="@android:drawable/ic_menu_today"
+            android:drawablePadding="8dp" />
+
+        <!-- Tasks Selection Container -->
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_tasks"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:paddingBottom="4dp" />
+
+        <LinearLayout
+            android:id="@+id/tasksSelectionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="4dp" />
+
+    </LinearLayout>
+</ScrollView>

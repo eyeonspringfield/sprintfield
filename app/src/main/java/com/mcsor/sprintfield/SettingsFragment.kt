@@ -1,59 +1,93 @@
 package com.mcsor.sprintfield
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.view.*
+import android.widget.Button
+import android.widget.Switch
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SettingsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SettingsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var switchNotifications: Switch
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var switchDarkMode: Switch
+    private lateinit var resetSettingsButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+    ): View {
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
+
+        switchNotifications = view.findViewById(R.id.switchNotifications)
+        switchDarkMode = view.findViewById(R.id.switchDarkMode)
+        resetSettingsButton = view.findViewById(R.id.resetSettingsButton)
+
+        loadSettings()
+
+        switchNotifications.setOnCheckedChangeListener { _, isChecked ->
+            saveSetting("notifications_enabled", isChecked)
+
+            val statusResId = if (isChecked) R.string.enabled else R.string.disabled
+            val status = getString(statusResId)
+            val message = getString(R.string.notifications_status, status)
+
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        }
+
+
+        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            saveSetting("dark_mode_enabled", isChecked)
+
+            val mode = if (isChecked) {
+                AppCompatDelegate.MODE_NIGHT_YES
+            } else {
+                AppCompatDelegate.MODE_NIGHT_NO
+            }
+
+            AppCompatDelegate.setDefaultNightMode(mode)
+
+            val statusResId = if (isChecked) R.string.enabled else R.string.disabled
+            val status = getString(statusResId)
+            val message = getString(R.string.dark_mode_status, status)
+
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        }
+
+
+        resetSettingsButton.setOnClickListener {
+            resetSettings()
+            Toast.makeText(requireContext(), getString(R.string.settings_reset), Toast.LENGTH_SHORT).show()
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SettingsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SettingsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun loadSettings() {
+        val prefs = requireActivity().getSharedPreferences("app_settings", Context.MODE_PRIVATE)
+        switchNotifications.isChecked = prefs.getBoolean("notifications_enabled", true)
+        val darkModeEnabled = prefs.getBoolean("dark_mode_enabled", false)
+        switchDarkMode.isChecked = darkModeEnabled
+
+        val mode =
+            if (darkModeEnabled) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+        AppCompatDelegate.setDefaultNightMode(mode)
+    }
+
+
+    private fun saveSetting(key: String, value: Boolean) {
+        val prefs = requireActivity().getSharedPreferences("app_settings", Context.MODE_PRIVATE)
+        prefs.edit().putBoolean(key, value).apply()
+    }
+
+    private fun resetSettings() {
+        val prefs = requireActivity().getSharedPreferences("app_settings", Context.MODE_PRIVATE)
+        prefs.edit().clear().apply()
+        loadSettings()
     }
 }

@@ -12,8 +12,9 @@ class IssueDao {
 
     fun addIssue(issue: Issue, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
         issuesCollection
-            .add(issue)
-            .addOnSuccessListener { docRef ->
+            .document(issue.id)
+            .set(issue)
+            .addOnSuccessListener {
                 updateTaskUrgency(issue.id, onSuccess, onFailure)
             }
             .addOnFailureListener(onFailure)
@@ -72,5 +73,19 @@ class IssueDao {
                 onSuccess(querySnapshot.size())
             }
             .addOnFailureListener(onFailure)
+    }
+
+    fun updateIssue(issue: Issue, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        Firebase.firestore.collection("issues").document(issue.id)
+            .set(issue)
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { onFailure(it) }
+    }
+
+    fun deleteIssue(issue: Issue, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        Firebase.firestore.collection("issues").document(issue.id)
+            .delete()
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { onFailure(it) }
     }
 }

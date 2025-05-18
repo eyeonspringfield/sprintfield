@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/teamNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/team_name"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:textColor="?android:textColorPrimary" />
+
+    <EditText
+        android:id="@+id/teamNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_team_name"
+        android:inputType="textCapWords" />
+
+</LinearLayout>

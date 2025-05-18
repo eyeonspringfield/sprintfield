@@ -7,13 +7,13 @@
 
     <EditText
         android:id="@+id/inputTitle"
-        android:hint="Task Title"
+        android:hint="@string/task_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/inputDescription"
-        android:hint="Task Description"
+        android:hint="@string/task_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
@@ -21,14 +21,14 @@
 
     <EditText
         android:id="@+id/inputTimeEstimate"
-        android:hint="Time Estimate (e.g., 5 hrs)"
+        android:hint="@string/time_estimate_e_g_5_hrs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Task Urgency"
+        android:text="@string/task_urgency"
         android:layout_marginVertical="15dp"
         />
 

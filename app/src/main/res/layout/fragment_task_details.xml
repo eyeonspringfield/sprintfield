@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description"
+            android:text="@string/description"
             android:textStyle="bold"
             android:textSize="16sp"
             android:paddingBottom="4dp" />
@@ -55,7 +55,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estimated Time"
+            android:text="@string/estimated_time"
             android:textStyle="bold"
             android:textSize="16sp"
             android:paddingBottom="4dp" />
@@ -73,7 +73,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Issues"
+            android:text="@string/issues"
             android:textStyle="bold"
             android:textSize="16sp"
             android:paddingBottom="4dp" />
@@ -88,9 +88,21 @@
             android:showDividers="middle" />
 
         <Button
+            android:id="@+id/editTaskButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Issue"
+            android:text="@string/edit_task" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_issue"
             android:id="@+id/addIssueButton"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/close_task"
+            android:id="@+id/closeOpenIssueButton"/>
     </LinearLayout>
 </ScrollView>

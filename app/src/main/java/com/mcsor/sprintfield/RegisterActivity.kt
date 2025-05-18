@@ -6,13 +6,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.Firebase
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
-class RegisterActivity : AppCompatActivity(){
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private val firestore = FirebaseFirestore.getInstance()
 
     private lateinit var registerButton: Button
     private lateinit var loginButton: Button
@@ -32,17 +35,17 @@ class RegisterActivity : AppCompatActivity(){
         password = findViewById(R.id.password)
         passwordAgain = findViewById(R.id.passwordAgain)
 
-        registerButton.setOnClickListener{
+        registerButton.setOnClickListener {
             val emailText = email.text.toString().trim()
             val passwordText = password.text.toString().trim()
-            val passwordAgainText = password.text.toString().trim()
+            val passwordAgainText = passwordAgain.text.toString().trim()
 
-            if(emailText.isEmpty() || passwordText.isEmpty() || passwordAgainText.isEmpty()){
+            if (emailText.isEmpty() || passwordText.isEmpty() || passwordAgainText.isEmpty()) {
                 Toast.makeText(this, getString(R.string.fill_out), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if(passwordText != passwordAgainText){
+            if (passwordText != passwordAgainText) {
                 Toast.makeText(this, getString(R.string.pass_no_match), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -55,22 +58,48 @@ class RegisterActivity : AppCompatActivity(){
             auth.createUserWithEmailAndPassword(emailText, passwordText)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, getString(R.string.reg_success), Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                        val firebaseUser = auth.currentUser
+                        if (firebaseUser != null) {
+                            val userData = hashMapOf(
+                                "uid" to firebaseUser.uid,
+                                "email" to firebaseUser.email,
+                                "createdAt" to System.currentTimeMillis()
+                            )
+                            firestore.collection("users")
+                                .document(firebaseUser.uid)
+                                .set(userData)
+                                .addOnSuccessListener {
+                                    Toast.makeText(
+                                        this,
+                                        getString(R.string.reg_success),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    val intent = Intent(this, MainActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                .addOnFailureListener { e ->
+                                    Toast.makeText(
+                                        this,
+                                        getString(R.string.user_add_failed),
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                        }
                     } else {
-                        Toast.makeText(this, getString(R.string.reg_failed, task.exception?.localizedMessage), Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this,
+                            getString(R.string.reg_failed, task.exception?.localizedMessage),
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
-
         }
 
-        loginButton.setOnClickListener{
+        loginButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
-
     }
 }

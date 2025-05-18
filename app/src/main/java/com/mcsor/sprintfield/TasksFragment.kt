@@ -220,10 +220,10 @@ class TasksFragment : Fragment() {
         urgencySpinner.adapter = adapter
 
         val dialog = AlertDialog.Builder(requireContext())
-            .setTitle("Add New Task")
+            .setTitle(getString(R.string.add_task))
             .setView(dialogView)
-            .setPositiveButton("Add", null)
-            .setNegativeButton("Cancel", null)
+            .setPositiveButton(getString(R.string.add), null)
+            .setNegativeButton(getString(R.string.cancel), null)
             .create()
 
         dialog.setOnShowListener {
