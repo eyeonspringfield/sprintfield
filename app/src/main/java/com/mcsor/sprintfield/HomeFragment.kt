@@ -21,6 +21,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        notifyUser()
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -28,7 +29,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
@@ -53,6 +53,10 @@ class HomeFragment : Fragment() {
         binding.buttonTasks.setOnClickListener {
             findNavController().navigate(R.id.tasksFragment)
         }
+    }
+
+    private fun notifyUser() {
+        (activity as? MainActivity)?.showUpdateNotification()
     }
 }
 
